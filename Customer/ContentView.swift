@@ -16,6 +16,11 @@ struct ContentView: View {
             Text("Hello customer")
         }
         .padding()
+        .onAppear {
+            print("Users Response")
+            dump(
+               try? StaticJSONMapper.decode(file: "UsersStaticData", type: UsersResponse.self))
+        }
     }
 }
 
