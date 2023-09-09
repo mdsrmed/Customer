@@ -21,6 +21,7 @@
 		21AC197B2AA3D83A001BA3F4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC197A2AA3D83A001BA3F4 /* Theme.swift */; };
 		21E0F27D2AAD1D3200BE9A13 /* CustomerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0F27C2AAD1D3200BE9A13 /* CustomerListView.swift */; };
 		21E0F27F2AAD238100BE9A13 /* CustomerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0F27E2AAD238100BE9A13 /* CustomerView.swift */; };
+		21E0F2822AAD2E3700BE9A13 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0F2812AAD2E3700BE9A13 /* TagView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		21AC197A2AA3D83A001BA3F4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		21E0F27C2AAD1D3200BE9A13 /* CustomerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListView.swift; sourceTree = "<group>"; };
 		21E0F27E2AAD238100BE9A13 /* CustomerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerView.swift; sourceTree = "<group>"; };
+		21E0F2812AAD2E3700BE9A13 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		21AC197C2AA3D917001BA3F4 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				21E0F2802AAD2E2500BE9A13 /* Views */,
 				219ED2402AABD78600DFF23D /* Mapper */,
 				219ED23D2AABD72400DFF23D /* Model */,
 			);
@@ -259,6 +262,14 @@
 			path = ViewMdoel;
 			sourceTree = "<group>";
 		};
+		21E0F2802AAD2E2500BE9A13 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				21E0F2812AAD2E3700BE9A13 /* TagView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,6 +344,7 @@
 			files = (
 				21E0F27F2AAD238100BE9A13 /* CustomerView.swift in Sources */,
 				219ED2422AABD7AA00DFF23D /* StaticJSONMapper.swift in Sources */,
+				21E0F2822AAD2E3700BE9A13 /* TagView.swift in Sources */,
 				21AC19782AA3D582001BA3F4 /* Symbols.swift in Sources */,
 				21AC197B2AA3D83A001BA3F4 /* Theme.swift in Sources */,
 				21AC196B2AA3D4E2001BA3F4 /* ContentView.swift in Sources */,

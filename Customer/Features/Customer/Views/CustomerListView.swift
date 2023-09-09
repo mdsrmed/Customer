@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CustomerListView: View {
+    
+    @State private var users: [User] = []
+ 
     var body: some View {
         NavigationStack {
             ZStack {
@@ -15,14 +18,9 @@ struct CustomerListView: View {
                     .ignoresSafeArea(edges: .top)
                 ScrollView {
                     LazyVStack(alignment: .leading) {
-                        ForEach(0..<7, id: \.self){ item in
-                            VStack {
-                                Rectangle()
-                                    .fill(.blue)
-                                    .frame(height: 130)
-                                    .cornerRadius(20)
-                            }
+                        ForEach(users, id: \.id){ user in
                             
+                            CustomerView(user: user)
                         }
                     }
                     .padding()
@@ -31,15 +29,17 @@ struct CustomerListView: View {
             .navigationTitle("Customer")
             .toolbar {
                 ToolbarItem {
-                    Button {
-                        
-                    } label: {
-                        Symbols.plus
-                            .imageScale(.large)
-                            .bold()
-                        
-                    }
+                    create
 
+                }
+            }
+            .onAppear{
+                do{
+                    let res = try StaticJSONMapper.decode(file: "UserStaricData", type: UsersResponse.self)
+                    
+                    users = res.data
+                } catch {
+                    print(error)
                 }
             }
         }
@@ -49,5 +49,20 @@ struct CustomerListView: View {
 struct CustomerListView_Previews: PreviewProvider {
     static var previews: some View {
         CustomerListView()
+    }
+}
+
+
+private extension CustomerListView {
+    var create: some View {
+        Button {
+            
+        } label: {
+            Symbols.plus
+                .imageScale(.large)
+                .bold()
+            
+        }
+
     }
 }
