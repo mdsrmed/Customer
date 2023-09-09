@@ -11,7 +11,18 @@ import SwiftUI
 struct CustomerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                CustomerListView()
+                    .tabItem {
+//                        VStack {
+//                            Image(systemName: "person")
+//                            Text("Home")
+//                        }
+                        
+                        Symbols.person
+                        Text("Home")
+                    }
+            }
         }
     }
 }
