@@ -33,11 +33,11 @@ struct CustomerListView: View {
 
                 }
             }
-            .onAppear{
+            .onAppear {
                 do{
-                    let res = try StaticJSONMapper.decode(file: "UserStaricData", type: UsersResponse.self)
+                    let res = try StaticJSONMapper.decode(file: "UsersStaticData", type: UsersResponse.self)
                     
-                    users = res.data
+                    self.users = res.data
                 } catch {
                     print(error)
                 }

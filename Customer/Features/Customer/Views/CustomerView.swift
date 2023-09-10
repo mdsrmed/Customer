@@ -22,26 +22,36 @@ struct CustomerView: View {
 //                        .frame(width: 70,height: 70)
 //                        .clipShape(Circle())
                 
-                AsyncImage(url: .init(string: user.avatar)){ image in
-                    image
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 70,height: 70)
-                        .clipShape(Circle())
-                                                
+                HStack(spacing: 5) {
+                    ZStack(alignment: .bottomTrailing) {
+                        AsyncImage(url: .init(string: user.avatar)){ image in
+                            image
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 70,height: 70)
+                                .clipShape(Circle())
+                                .overlay {
+                                    Circle()
+                                        .strokeBorder(Color.gray, lineWidth: 0.5)
+                                }
+                            
+                            
+                            
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        
+                        
+                        
+                        TagView(id: user.id)
+                            .offset(x:27,y:27)
+                    }
                     
-                } placeholder: {
-                     ProgressView()
+                    Text("\(user.firstName) \(user.lastName)")
+                        .font(.body)
+                        .fontWeight(.semibold)
+                        .padding(.horizontal)
                 }
-         
-                    TagView(id: user.id)
-                }
-                
-                
-         
-                Text("\(user.firstName)+(user.lastName)")
-                        .font(.title)
-                        .bold()
 
                 
                 Spacer()
@@ -52,9 +62,12 @@ struct CustomerView: View {
                     Image(systemName: "ellipsis")
                         .imageScale(.large)
                 }
-
-                    
-                    
+            }
+                
+                
+         
+                
+  
             }
             
             Divider()
