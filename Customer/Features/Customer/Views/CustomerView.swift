@@ -56,12 +56,21 @@ struct CustomerView: View {
                 
                 Spacer()
                 
-                Button {
-                    
+//                Button {
+//
+//
+//                } label: {
+//                    Image(systemName: "ellipsis")
+//                        .imageScale(.large)
+//                }
+                
+                NavigationLink {
+                    DetailView(user: user)
                 } label: {
                     Image(systemName: "ellipsis")
                         .imageScale(.large)
                 }
+
             }
                 
                 
@@ -78,8 +87,8 @@ struct CustomerView: View {
 //struct CustomerView_Previews: PreviewProvider {
 //
 //    static var previewUser: User {
-//        let users = try! StaticJSONMapper.decode(file: "UserStaticData", type: UserDetailResponse.self)
-//        return users.data.first!
+//        let users = try! StaticJSONMapper.decode(file: "UsersStaticData", type: UserDetailResponse.self)
+//        return users.data[0]
 //    }
 //
 //    static var previews: some View {

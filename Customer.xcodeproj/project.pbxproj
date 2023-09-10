@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		218C83892AAE72270050693A /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C83882AAE72270050693A /* DetailView.swift */; };
 		219ED2362AABD40200DFF23D /* UsersStaticData.json in Resources */ = {isa = PBXBuildFile; fileRef = 219ED2352AABD40200DFF23D /* UsersStaticData.json */; };
 		219ED2382AABD4CF00DFF23D /* SingleUserData.json in Resources */ = {isa = PBXBuildFile; fileRef = 219ED2372AABD4CF00DFF23D /* SingleUserData.json */; };
 		219ED23A2AABD5A100DFF23D /* UserDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219ED2392AABD5A100DFF23D /* UserDetailResponse.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		214E45BB2AAA803A00617FBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		218C83882AAE72270050693A /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		219ED2352AABD40200DFF23D /* UsersStaticData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UsersStaticData.json; sourceTree = "<group>"; };
 		219ED2372AABD4CF00DFF23D /* SingleUserData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SingleUserData.json; sourceTree = "<group>"; };
 		219ED2392AABD5A100DFF23D /* UserDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailResponse.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 		21AC19862AA3D9D5001BA3F4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				218C83882AAE72270050693A /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21E0F27F2AAD238100BE9A13 /* CustomerView.swift in Sources */,
+				218C83892AAE72270050693A /* DetailView.swift in Sources */,
 				219ED2422AABD7AA00DFF23D /* StaticJSONMapper.swift in Sources */,
 				21E0F2822AAD2E3700BE9A13 /* TagView.swift in Sources */,
 				21AC19782AA3D582001BA3F4 /* Symbols.swift in Sources */,
