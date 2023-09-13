@@ -10,6 +10,7 @@ import SwiftUI
 struct CustomerListView: View {
     
     @State private var users: [User] = []
+    @State private var shouldShowCreate = false
  
     var body: some View {
         NavigationStack {
@@ -42,6 +43,10 @@ struct CustomerListView: View {
                     print(error)
                 }
             }
+            .sheet(isPresented: $shouldShowCreate) {
+                CreateView()
+            }
+            
         }
     }
 }
@@ -56,7 +61,7 @@ struct CustomerListView_Previews: PreviewProvider {
 private extension CustomerListView {
     var create: some View {
         Button {
-            
+            shouldShowCreate.toggle()
         } label: {
             Symbols.plus
                 .imageScale(.large)
