@@ -24,10 +24,14 @@ struct DetailView: View {
 //                TagView(id: userInfo?.data.id)
                 
                 
-                HStack {
-                    avatar
+                VStack(spacing: 10) {
+                    HStack {
+                        avatar
+                    }
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    
+                   
                 }
-                .frame(maxWidth: .infinity, alignment: .center)
                 
                 
                 Group {
