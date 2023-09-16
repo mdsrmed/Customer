@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CustomerListView: View {
     
-    @State private var users: [User] = []
+    @StateObject private var vm = CustomerViewModel()
+//    @State private var users: [User] = []
     @State private var shouldShowCreate = false
  
     var body: some View {
@@ -19,7 +20,7 @@ struct CustomerListView: View {
                     .ignoresSafeArea(edges: .top)
                 ScrollView {
                     LazyVStack(alignment: .leading) {
-                        ForEach(users, id: \.id){ user in
+                        ForEach(vm.users, id: \.id){ user in
                             
                             CustomerView(user: user)
                         }
@@ -36,15 +37,8 @@ struct CustomerListView: View {
             }
             .onAppear {
                 
+                vm.fetchUsers()
                 
-                NetworkingManager.shared.request("https://reqres.in/api/users", type: UsersResponse.self) { res in
-                    switch res {
-                    case .success(let response):
-                        users = response.data
-                    case .failure(let error):
-                        print(error)
-                    }
-                }
 //                do{
 //                    let res = try StaticJSONMapper.decode(file: "UsersStaticData", type: UsersResponse.self)
 //
