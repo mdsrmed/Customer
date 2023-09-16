@@ -10,7 +10,9 @@ import SwiftUI
 struct DetailView: View {
     
     //    let user: User
-    @State private var userInfo: UserDetailResponse?
+    @StateObject private var vm = DetailViewModel()
+    let userId: Int
+//    @State private var userInfo: UserDetailResponse?
     
     var body: some View {
         
@@ -35,15 +37,15 @@ struct DetailView: View {
                 
                 
                 Group {
-                    detailViewComponent("First Name" ,userInfo?.data?.firstName ?? "-")
+                    detailViewComponent("First Name" ,vm.userInfo?.data?.firstName ?? "-")
                     
                     Divider()
                     
-                    detailViewComponent("Last Name",userInfo?.data?.lastName ?? "-")
+                    detailViewComponent("Last Name",vm.userInfo?.data?.lastName ?? "-")
                     
                     Divider()
                     
-                    detailViewComponent("Email", userInfo?.data?.email ?? "-")
+                    detailViewComponent("Email", vm.userInfo?.data?.email ?? "-")
                     
                 }
                 .foregroundColor(Theme.text)
@@ -61,11 +63,13 @@ struct DetailView: View {
         }
         .navigationTitle("Details")
         .onAppear{
-            do {
-                 userInfo = try StaticJSONMapper.decode(file: "SingleUserData", type: UserDetailResponse.self)
-            } catch {
-                print(error)
-            }
+            
+            vm.fetchDetails(for: userId)
+//            do {
+//                 userInfo = try StaticJSONMapper.decode(file: "SingleUserData", type: UserDetailResponse.self)
+//            } catch {
+//                print(error)
+//            }
         }
     }
     
@@ -104,9 +108,9 @@ extension DetailView {
     @ViewBuilder
     var link: some View {
         
-        if let supportAbsoluteString = userInfo?.support?.url,
+        if let supportAbsoluteString = vm.userInfo?.support?.url,
            let supportUrl = URL(string: supportAbsoluteString),
-           let supportTxt = userInfo?.support?.text {
+           let supportTxt = vm.userInfo?.support?.text {
             HStack {
                 Link(destination: supportUrl) {
                     
@@ -134,7 +138,7 @@ extension DetailView {
     
     @ViewBuilder
     var avatar: some View {
-        if let avatarAbsoluteString = userInfo?.data?.avatar,
+        if let avatarAbsoluteString = vm.userInfo?.data?.avatar,
            let avatarUrl = URL(string: avatarAbsoluteString){
             AsyncImage(url: avatarUrl) { image in
                 image

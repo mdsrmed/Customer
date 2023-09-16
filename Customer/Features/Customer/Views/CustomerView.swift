@@ -66,7 +66,7 @@ struct CustomerView: View {
                     //                }
                     
                     NavigationLink {
-                        DetailView()
+                        DetailView(userId: user.id)
                     } label: {
                         Image(systemName: "ellipsis")
                             .imageScale(.large)
