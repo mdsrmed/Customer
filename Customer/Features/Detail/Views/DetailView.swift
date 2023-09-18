@@ -71,6 +71,11 @@ struct DetailView: View {
 //                print(error)
 //            }
         }
+        .alert(isPresented: $vm.hasError, error: vm.error) {
+            Button("Retry") {}
+        }
+        
+        
     }
     
 }

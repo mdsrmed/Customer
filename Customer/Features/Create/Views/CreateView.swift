@@ -53,6 +53,9 @@ struct CreateView: View {
                         }
                     }
                 }
+                .alert(isPresented: $vm.hasError, error: vm.error) {
+                    Button("Retry") {}
+                }
             }
         }
     }

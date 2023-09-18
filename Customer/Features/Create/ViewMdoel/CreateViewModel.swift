@@ -11,6 +11,8 @@ import Foundation
 final class CreateViewModel: ObservableObject {
     @Published var customer = NewCustomer()
     @Published private(set) var state: SubmissionState?
+    @Published private(set) var error: NetworkingManager.NetworkingError?
+    @Published var hasError = false
     
     func create(){
         
@@ -30,6 +32,8 @@ final class CreateViewModel: ObservableObject {
                     
                 case .failure(_):
                     self?.state = .unsuccessful
+                    self?.hasError = true
+                    self?.error = self?.error as? NetworkingManager.NetworkingError
                     
                 }
                 
