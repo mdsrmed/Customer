@@ -20,46 +20,52 @@ struct DetailView: View {
             
             background
             
-            VStack(alignment: .leading, spacing: 20) {
-                
-                
-//                TagView(id: userInfo?.data.id)
-                
-                
-                VStack(spacing: 10) {
-                    HStack {
-                        avatar
+            if vm.isLoading {
+                ProgressView()
+            } else {
+                VStack(alignment: .leading, spacing: 20) {
+                    
+                    
+    //                TagView(id: userInfo?.data.id)
+                    
+                    
+                    VStack(spacing: 10) {
+                        HStack {
+                            avatar
+                        }
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        
+                       
                     }
-                    .frame(maxWidth: .infinity, alignment: .center)
                     
-                   
+                    
+                    Group {
+                        detailViewComponent("First Name" ,vm.userInfo?.data?.firstName ?? "-")
+                        
+                        Divider()
+                        
+                        detailViewComponent("Last Name",vm.userInfo?.data?.lastName ?? "-")
+                        
+                        Divider()
+                        
+                        detailViewComponent("Email", vm.userInfo?.data?.email ?? "-")
+                        
+                    }
+                    .foregroundColor(Theme.text)
+                    
+                    Group {
+                        link
+                        
+                    }
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 8)
+                    .background(Theme.detailbackground, in: RoundedRectangle(cornerRadius: 15, style: .continuous))
+                    
                 }
-                
-                
-                Group {
-                    detailViewComponent("First Name" ,vm.userInfo?.data?.firstName ?? "-")
-                    
-                    Divider()
-                    
-                    detailViewComponent("Last Name",vm.userInfo?.data?.lastName ?? "-")
-                    
-                    Divider()
-                    
-                    detailViewComponent("Email", vm.userInfo?.data?.email ?? "-")
-                    
-                }
-                .foregroundColor(Theme.text)
-                
-                Group {
-                    link
-                    
-                }
-                .padding(.horizontal, 8)
-                .padding(.vertical, 8)
-                .background(Theme.detailbackground, in: RoundedRectangle(cornerRadius: 15, style: .continuous))
-                
+                .padding()
             }
-            .padding()
+            
+            
         }
         .navigationTitle("Details")
         .onAppear{

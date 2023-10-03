@@ -18,15 +18,22 @@ struct CustomerListView: View {
             ZStack {
                 Theme.background
                     .ignoresSafeArea(edges: .top)
-                ScrollView {
-                    LazyVStack(alignment: .leading) {
-                        ForEach(vm.users, id: \.id){ user in
-                            
-                            CustomerView(user: user)
+                
+                if vm.isLoading {
+                    ProgressView()
+                } else {
+                    ScrollView {
+                        LazyVStack(alignment: .leading) {
+                            ForEach(vm.users, id: \.id){ user in
+                                
+                                CustomerView(user: user)
+                            }
                         }
+                        .padding()
                     }
-                    .padding()
                 }
+                
+                
             }
             .navigationTitle("Customer")
             .toolbar {
@@ -77,6 +84,7 @@ private extension CustomerListView {
                 .bold()
             
         }
+        .disabled(vm.isLoading)
 
     }
 }
