@@ -9,10 +9,16 @@ import SwiftUI
 
 struct CheckmarkPopoverView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Symbols.checkmark
+            .font(.system(.largeTitle,design: .rounded).bold())
+            .padding()
+            .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
     }
 }
 
 #Preview {
     CheckmarkPopoverView()
+        .previewLayout(.sizeThatFits)
+        .padding()
+        .background(.green)
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2148C8282AB3B445007CF866 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2148C8272AB3B445007CF866 /* NetworkingManager.swift */; };
+		2156ECCB2ACC517300A65DE6 /* CheckmarkPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156ECCA2ACC517300A65DE6 /* CheckmarkPopoverView.swift */; };
+		2156ECCE2ACC58F300A65DE6 /* CreateValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156ECCD2ACC58F300A65DE6 /* CreateValidator.swift */; };
 		218C83892AAE72270050693A /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C83882AAE72270050693A /* DetailView.swift */; };
 		21975E4B2AB6545E00B33026 /* CustomerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21975E4A2AB6545E00B33026 /* CustomerViewModel.swift */; };
 		21975E4D2AB661B200B33026 /* DetailViewMdoel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21975E4C2AB661B200B33026 /* DetailViewMdoel.swift */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		2148C8272AB3B445007CF866 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		214E45BB2AAA803A00617FBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2156ECCA2ACC517300A65DE6 /* CheckmarkPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkPopoverView.swift; sourceTree = "<group>"; };
+		2156ECCD2ACC58F300A65DE6 /* CreateValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateValidator.swift; sourceTree = "<group>"; };
 		218C83882AAE72270050693A /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		21975E4A2AB6545E00B33026 /* CustomerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewModel.swift; sourceTree = "<group>"; };
 		21975E4C2AB661B200B33026 /* DetailViewMdoel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewMdoel.swift; sourceTree = "<group>"; };
@@ -75,6 +79,14 @@
 				2148C8272AB3B445007CF866 /* NetworkingManager.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		2156ECCC2ACC58CE00A65DE6 /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				2156ECCD2ACC58F300A65DE6 /* CreateValidator.swift */,
+			);
+			path = Validator;
 			sourceTree = "<group>";
 		};
 		219ED2342AABD3C200DFF23D /* JSON */ = {
@@ -186,6 +198,7 @@
 		21AC197F2AA3D951001BA3F4 /* Create */ = {
 			isa = PBXGroup;
 			children = (
+				2156ECCC2ACC58CE00A65DE6 /* Validator */,
 				21AC198B2AA3DA07001BA3F4 /* ViewMdoel */,
 				21AC198A2AA3D9FD001BA3F4 /* Model */,
 				21AC19892AA3D9F2001BA3F4 /* Views */,
@@ -295,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				21E0F2812AAD2E3700BE9A13 /* TagView.swift */,
+				2156ECCA2ACC517300A65DE6 /* CheckmarkPopoverView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,7 +341,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					21AC19642AA3D4E2001BA3F4 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -373,6 +387,7 @@
 			files = (
 				21E0F27F2AAD238100BE9A13 /* CustomerView.swift in Sources */,
 				218C83892AAE72270050693A /* DetailView.swift in Sources */,
+				2156ECCE2ACC58F300A65DE6 /* CreateValidator.swift in Sources */,
 				219ED2422AABD7AA00DFF23D /* StaticJSONMapper.swift in Sources */,
 				21E0F2822AAD2E3700BE9A13 /* TagView.swift in Sources */,
 				21AC19782AA3D582001BA3F4 /* Symbols.swift in Sources */,
@@ -388,6 +403,7 @@
 				219ED23C2AABD66B00DFF23D /* UsersResponse.swift in Sources */,
 				219ED23F2AABD73600DFF23D /* Models.swift in Sources */,
 				2148C8282AB3B445007CF866 /* NetworkingManager.swift in Sources */,
+				2156ECCB2ACC517300A65DE6 /* CheckmarkPopoverView.swift in Sources */,
 				21975E4D2AB661B200B33026 /* DetailViewMdoel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +447,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -491,6 +508,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

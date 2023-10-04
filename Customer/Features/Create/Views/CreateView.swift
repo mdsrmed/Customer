@@ -12,17 +12,35 @@ struct CreateView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.presentationMode) private var presentationMode
     @StateObject private var vm = CreateViewModel()
+    @FocusState private var focusField: Field?
+    let successfulAction: () -> Void
     
     var body: some View {
         NavigationStack {
             Form {
-                TextField("First Name", text: $vm.customer.firstName)
-                TextField("Last Name", text: $vm.customer.lastName)
-                TextField("Job", text: $vm.customer.job)
+                
+                Section {
+                    TextField("First Name", text: $vm.customer.firstName)
+                        .focused($focusField, equals:  .firstName)
+                    TextField("Last Name", text: $vm.customer.lastName)
+                        .focused($focusField, equals:  .lastName)
+                    TextField("Job", text: $vm.customer.job)
+                        .focused($focusField, equals:  .job)
+                } footer: {
+                    if case .validation(let err) = vm.error,
+                       let errorDesc = err.errorDescription {
+                        Text(errorDesc)
+                            .foregroundStyle(.red)
+                    }
+                }
+
+                
+                
                 
                 
                 Section {
                     Button("Submit") {
+                        focusField = nil
                         vm.create()
                     }
                 }
@@ -49,8 +67,10 @@ struct CreateView: View {
                     if newValue == .successful {
                         if #available(iOS 15, *){
                             dismiss()
+                            successfulAction()
                         } else {
                             presentationMode.wrappedValue.dismiss()
+                            successfulAction()
                         }
                     }
                 }
@@ -69,6 +89,14 @@ struct CreateView: View {
 
 struct CreateView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateView()
+        CreateView{}
+    }
+}
+
+extension CreateView {
+    enum Field: Hashable {
+        case firstName
+        case lastName
+        case job
     }
 }
