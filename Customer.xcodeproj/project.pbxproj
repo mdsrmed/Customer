@@ -26,6 +26,9 @@
 		21AC19782AA3D582001BA3F4 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC19772AA3D582001BA3F4 /* Symbols.swift */; };
 		21AC197B2AA3D83A001BA3F4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC197A2AA3D83A001BA3F4 /* Theme.swift */; };
 		21B512AB2AB25F1700145CDC /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B512AA2AB25F1700145CDC /* CreateView.swift */; };
+		21C5BDAF2ACD9DF3002D3193 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C5BDAE2ACD9DF3002D3193 /* HapticsManager.swift */; };
+		21C5BDB12ACDA0B8002D3193 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C5BDB02ACDA0B8002D3193 /* SettingsView.swift */; };
+		21C5BDB42ACDA267002D3193 /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C5BDB32ACDA267002D3193 /* UserDefaultKeys.swift */; };
 		21E0F27D2AAD1D3200BE9A13 /* CustomerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0F27C2AAD1D3200BE9A13 /* CustomerListView.swift */; };
 		21E0F27F2AAD238100BE9A13 /* CustomerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0F27E2AAD238100BE9A13 /* CustomerView.swift */; };
 		21E0F2822AAD2E3700BE9A13 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0F2812AAD2E3700BE9A13 /* TagView.swift */; };
@@ -55,6 +58,9 @@
 		21AC19772AA3D582001BA3F4 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		21AC197A2AA3D83A001BA3F4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		21B512AA2AB25F1700145CDC /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
+		21C5BDAE2ACD9DF3002D3193 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		21C5BDB02ACDA0B8002D3193 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		21C5BDB32ACDA267002D3193 /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
 		21E0F27C2AAD1D3200BE9A13 /* CustomerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListView.swift; sourceTree = "<group>"; };
 		21E0F27E2AAD238100BE9A13 /* CustomerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerView.swift; sourceTree = "<group>"; };
 		21E0F2812AAD2E3700BE9A13 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
@@ -166,6 +172,8 @@
 		21AC197C2AA3D917001BA3F4 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				21C5BDB22ACDA23B002D3193 /* UserDefaults */,
+				21C5BDAD2ACD9DD4002D3193 /* Haptics */,
 				2148C8262AB3B428007CF866 /* API */,
 				21E0F2802AAD2E2500BE9A13 /* Views */,
 				219ED2402AABD78600DFF23D /* Mapper */,
@@ -252,6 +260,7 @@
 		21AC19852AA3D9C9001BA3F4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				21C5BDB02ACDA0B8002D3193 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -302,6 +311,22 @@
 				21E704182AB7AF41007CE820 /* CreateViewModel.swift */,
 			);
 			path = ViewMdoel;
+			sourceTree = "<group>";
+		};
+		21C5BDAD2ACD9DD4002D3193 /* Haptics */ = {
+			isa = PBXGroup;
+			children = (
+				21C5BDAE2ACD9DF3002D3193 /* HapticsManager.swift */,
+			);
+			path = Haptics;
+			sourceTree = "<group>";
+		};
+		21C5BDB22ACDA23B002D3193 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				21C5BDB32ACDA267002D3193 /* UserDefaultKeys.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		21E0F2802AAD2E2500BE9A13 /* Views */ = {
@@ -394,8 +419,10 @@
 				21AC197B2AA3D83A001BA3F4 /* Theme.swift in Sources */,
 				21E704192AB7AF41007CE820 /* CreateViewModel.swift in Sources */,
 				21AC196B2AA3D4E2001BA3F4 /* ContentView.swift in Sources */,
+				21C5BDAF2ACD9DF3002D3193 /* HapticsManager.swift in Sources */,
 				219ED23A2AABD5A100DFF23D /* UserDetailResponse.swift in Sources */,
 				21B512AB2AB25F1700145CDC /* CreateView.swift in Sources */,
+				21C5BDB42ACDA267002D3193 /* UserDefaultKeys.swift in Sources */,
 				21E704172AB7AEAF007CE820 /* NewCustomer.swift in Sources */,
 				21E0F27D2AAD1D3200BE9A13 /* CustomerListView.swift in Sources */,
 				21AC19692AA3D4E2001BA3F4 /* CustomerApp.swift in Sources */,
@@ -405,6 +432,7 @@
 				2148C8282AB3B445007CF866 /* NetworkingManager.swift in Sources */,
 				2156ECCB2ACC517300A65DE6 /* CheckmarkPopoverView.swift in Sources */,
 				21975E4D2AB661B200B33026 /* DetailViewMdoel.swift in Sources */,
+				21C5BDB12ACDA0B8002D3193 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
