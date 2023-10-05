@@ -29,6 +29,7 @@
 		21C5BDAF2ACD9DF3002D3193 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C5BDAE2ACD9DF3002D3193 /* HapticsManager.swift */; };
 		21C5BDB12ACDA0B8002D3193 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C5BDB02ACDA0B8002D3193 /* SettingsView.swift */; };
 		21C5BDB42ACDA267002D3193 /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C5BDB32ACDA267002D3193 /* UserDefaultKeys.swift */; };
+		21C5BDB62ACDA861002D3193 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C5BDB52ACDA861002D3193 /* Endpoint.swift */; };
 		21E0F27D2AAD1D3200BE9A13 /* CustomerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0F27C2AAD1D3200BE9A13 /* CustomerListView.swift */; };
 		21E0F27F2AAD238100BE9A13 /* CustomerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0F27E2AAD238100BE9A13 /* CustomerView.swift */; };
 		21E0F2822AAD2E3700BE9A13 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0F2812AAD2E3700BE9A13 /* TagView.swift */; };
@@ -61,6 +62,7 @@
 		21C5BDAE2ACD9DF3002D3193 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		21C5BDB02ACDA0B8002D3193 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		21C5BDB32ACDA267002D3193 /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
+		21C5BDB52ACDA861002D3193 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		21E0F27C2AAD1D3200BE9A13 /* CustomerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListView.swift; sourceTree = "<group>"; };
 		21E0F27E2AAD238100BE9A13 /* CustomerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerView.swift; sourceTree = "<group>"; };
 		21E0F2812AAD2E3700BE9A13 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				2148C8272AB3B445007CF866 /* NetworkingManager.swift */,
+				21C5BDB52ACDA861002D3193 /* Endpoint.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				21E704192AB7AF41007CE820 /* CreateViewModel.swift in Sources */,
 				21AC196B2AA3D4E2001BA3F4 /* ContentView.swift in Sources */,
 				21C5BDAF2ACD9DF3002D3193 /* HapticsManager.swift in Sources */,
+				21C5BDB62ACDA861002D3193 /* Endpoint.swift in Sources */,
 				219ED23A2AABD5A100DFF23D /* UserDetailResponse.swift in Sources */,
 				21B512AB2AB25F1700145CDC /* CreateView.swift in Sources */,
 				21C5BDB42ACDA267002D3193 /* UserDefaultKeys.swift in Sources */,
