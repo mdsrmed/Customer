@@ -41,7 +41,10 @@ struct CreateView: View {
                 Section {
                     Button("Submit") {
                         focusField = nil
-                        vm.create()
+                        Task {
+                            await vm.create()
+                        }
+//                        vm.create()
                     }
                 }
                 .disabled(vm.state == .submitting)

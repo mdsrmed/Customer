@@ -43,18 +43,21 @@ struct CustomerListView: View {
                     
                 }
             }
-            .onAppear {
-                
-                vm.fetchUsers()
-                
-                //                do{
-                //                    let res = try StaticJSONMapper.decode(file: "UsersStaticData", type: UsersResponse.self)
-                //
-                //                    self.users = res.data
-                //                } catch {
-                //                    print(error)
-                //                }
+            .task {
+                await vm.fetchUsers()
             }
+//            .onAppear {
+//                
+//                vm.fetchUsers()
+//                
+//                //                do{
+//                //                    let res = try StaticJSONMapper.decode(file: "UsersStaticData", type: UsersResponse.self)
+//                //
+//                //                    self.users = res.data
+//                //                } catch {
+//                //                    print(error)
+//                //                }
+//            }
             .sheet(isPresented: $shouldShowCreate) {
                 CreateView{
                     haptic(.success)
@@ -64,7 +67,10 @@ struct CustomerListView: View {
                 }
                 .alert(isPresented: $vm.hasError, error: vm.error) {
                     Button("Retry") {
-                        vm.fetchUsers()
+//                        vm.fetchUsers()
+                        Task {
+                            await vm.fetchUsers()
+                        }
                     }
                 }
                 .overlay {

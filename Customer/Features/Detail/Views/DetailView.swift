@@ -68,15 +68,18 @@ struct DetailView: View {
             
         }
         .navigationTitle("Details")
-        .onAppear{
-            
-            vm.fetchDetails(for: userId)
-//            do {
-//                 userInfo = try StaticJSONMapper.decode(file: "SingleUserData", type: UserDetailResponse.self)
-//            } catch {
-//                print(error)
-//            }
+        .task {
+            await vm.fetchDetails(for: userId)
         }
+//        .onAppear{
+//            
+//            vm.fetchDetails(for: userId)
+////            do {
+////                 userInfo = try StaticJSONMapper.decode(file: "SingleUserData", type: UserDetailResponse.self)
+////            } catch {
+////                print(error)
+////            }
+//        }
         .alert(isPresented: $vm.hasError, error: vm.error) {
             Button("Retry") {}
         }
