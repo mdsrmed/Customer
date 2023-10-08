@@ -15,4 +15,5 @@ enum Symbols {
     static let plus = Image(systemName: "plus")
     static let link = Image(systemName: "link") 
     static let checkmark = Image(systemName: "checkmark")
+    static let refresh = Image(systemName: "arrow.clockwise")
 }

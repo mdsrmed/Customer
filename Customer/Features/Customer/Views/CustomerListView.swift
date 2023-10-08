@@ -13,6 +13,7 @@ struct CustomerListView: View {
     //    @State private var users: [User] = []
     @State private var shouldShowCreate = false
     @State private var shouldShowSuccess: Bool = false
+    @State private var hasAppeared: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -40,11 +41,17 @@ struct CustomerListView: View {
             .toolbar {
                 ToolbarItem {
                     create
-                    
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    refresh
                 }
             }
             .task {
-                await vm.fetchUsers()
+                if !hasAppeared {
+                    await vm.fetchUsers()
+                    hasAppeared = true
+                }
+                
             }
 //            .onAppear {
 //                
@@ -112,6 +119,17 @@ struct CustomerListView: View {
             }
             .disabled(vm.isLoading)
             
+        }
+        
+        var refresh: some View {
+            Button{
+                Task {
+                    await vm.fetchUsers()
+                }
+            }label: {
+                Symbols.refresh
+            }
+            .disabled(vm.isLoading)
         }
     }
     
