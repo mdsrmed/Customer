@@ -29,15 +29,26 @@ struct CustomerListView: View {
                             ForEach(vm.users, id: \.id){ user in
                                 
                                 CustomerView(user: user)
+                                    .task {
+                                        if vm.hasReachedEnd(of: user) && !vm.isFetching {
+                                            await vm.fetchNextSetOfUsers()
+                                        }
+                                    }
                             }
                         }
                         .padding()
+                    }
+                    .overlay(alignment: .bottom) {
+                        if vm.isFetching {
+                            ProgressView()
+                        }
                     }
                 }
                 
                 
             }
             .navigationTitle("Customer")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem {
                     create

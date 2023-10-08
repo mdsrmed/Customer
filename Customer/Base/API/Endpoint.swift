@@ -9,7 +9,7 @@ import Foundation
 
 
 enum Endpoint {
-    case customer
+    case customer(page: Int)
     case detail(id: Int)
     case create(submissionData: Data?)
     
@@ -42,12 +42,28 @@ enum Endpoint {
         urlComponents.host = host
         urlComponents.path = path
         
+        var requestQueryItems = queryItem?.compactMap { item in
+            
+            URLQueryItem(name: item.key , value: item.value)
+        }
+        
         #if DEBUG
-        urlComponents.queryItems = [
-        URLQueryItem(name: "delay", value: "1")]
+        requestQueryItems?.append(URLQueryItem(name: "delay", value: "1"))
         #endif
         
+        urlComponents.queryItems = requestQueryItems
+        
         return urlComponents.url
+    }
+    
+    var queryItem: [String: String]? {
+        switch self {
+        case .customer(let page):
+            return ["page": "\(page)"]
+            
+        default:
+            return nil
+        }
     }
 }
 
