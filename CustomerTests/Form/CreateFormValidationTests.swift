@@ -6,29 +6,98 @@
 //
 
 import XCTest
+@testable import Customer
 
 final class CreateFormValidationTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    private var validator: CreateValidator!
+    
+    override func setUp()  {
+        validator = CreateValidator()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown() {
+        validator = nil
     }
+    
+    
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func test_with_empty_person_first_name_error_thrown(){
+        let customer = NewCustomer()
+//        let validator = CreateValidator()
+        
+        XCTAssertThrowsError(try validator.validate(customer),"Error for an empty first name should be thrown")
+        
+        do{
+            _ = try validator.validate(customer)
+        } catch {
+            guard let validationError = error as? CreateValidator.CreateValidatorError else {
+                XCTFail("Got the wrong type of error expecting a create validator error")
+                return
+            }
+            
+            XCTAssertEqual(validationError, CreateValidator.CreateValidatorError.invalidFirstName, "Expecting an error where we have an invalid first name")
+        }
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func test_with_empty_first_name_error_thrown(){
+        let customer = NewCustomer(lastName: "Ads",job: "iOS Dev")
+        XCTAssertThrowsError(try validator.validate(customer),"Error for an empty first name should be thrown")
+        
+        do{
+            _ = try validator.validate(customer)
+        } catch {
+            guard let validationError = error as? CreateValidator.CreateValidatorError else {
+                XCTFail("Got the wrong type of error expecting a create validator error")
+                return
+            }
+            
+            XCTAssertEqual(validationError, CreateValidator.CreateValidatorError.invalidFirstName, "Expecting an error where we have an invalid first name")
+        }
+    }
+    
+    func test_with_empty_last_name_error_thrown(){
+        let customer = NewCustomer(firstName: "Shohid", job: "iOS Dev")
+        XCTAssertThrowsError(try validator.validate(customer),"Error for an empty last name should be thrown")
+        
+        do{
+            _ = try validator.validate(customer)
+        } catch {
+            guard let validationError = error as? CreateValidator.CreateValidatorError else {
+                XCTFail("Got the wrong type of error expecting a create validator error")
+                return
+            }
+            
+            XCTAssertEqual(validationError, CreateValidator.CreateValidatorError.invalidLastName, "Expecting an error where we have an invalid last name")
+        }
+        
+    }
+    
+    func test_with_empty_job_error_thrown(){
+        let customer = NewCustomer(firstName: "Md",lastName: "Rahman")
+        XCTAssertThrowsError(try validator.validate(customer),"Error for an empty job should be thrown")
+        
+        do{
+            _ = try validator.validate(customer)
+        } catch {
+            guard let validationError = error as? CreateValidator.CreateValidatorError else {
+                XCTFail("Got the wrong type of error expecting a create validator error")
+                return
+            }
+            
+            XCTAssertEqual(validationError, CreateValidator.CreateValidatorError.invalidJob, "Expecting an error where we have an invalid job")
+        }
+        
+        
+    }
+    
+    func test_with_valid_person_error_not_thrown(){
+       let customer = NewCustomer(firstName: "Md", lastName: "Rahman", job: "iOS Dev")
+        
+        do{
+            _ = try validator.validate(customer)
+        } catch {
+            XCTFail("No error should be thrown,since the customer should be a valid object")
         }
     }
 
