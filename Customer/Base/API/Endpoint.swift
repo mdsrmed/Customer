@@ -68,7 +68,7 @@ enum Endpoint {
 }
 
 extension Endpoint {
-    enum MethodType {
+    enum MethodType: Equatable {
         case GET
         case POST(data: Data?)
     }

@@ -6,30 +6,28 @@
 //
 
 import XCTest
+@testable import Customer
 
 final class NetworkingEndpointTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_with_customer_endpoint_request_is_valid(){
+        let endpoint = Endpoint.customer(page: 1)
+        
+        XCTAssertEqual(endpoint.host, "reqres.in","The host should be reqres.in")
+        XCTAssertEqual(endpoint.path,"/api/users", "The path should be /api/users")
+        XCTAssertEqual(endpoint.methodType, .GET, "The method type should be GET")
+        XCTAssertEqual(endpoint.queryItem, ["pag": "1"], "The query items should be page:1")
+        
+        XCTAssertEqual(endpoint.url?.absoluteString, "https://reqres.in/api/users?page=1&delay=3","The generated doesn't match out endpoint")
+        
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_with_detail_endpoint_request_is_valid(){
+        
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_with_create_endpoint_request_is_valid(){
+        
     }
 
 }

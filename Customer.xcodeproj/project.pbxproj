@@ -11,6 +11,7 @@
 		2156ECCB2ACC517300A65DE6 /* CheckmarkPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156ECCA2ACC517300A65DE6 /* CheckmarkPopoverView.swift */; };
 		2156ECCE2ACC58F300A65DE6 /* CreateValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156ECCD2ACC58F300A65DE6 /* CreateValidator.swift */; };
 		218C83892AAE72270050693A /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C83882AAE72270050693A /* DetailView.swift */; };
+		2194D6972AE07BA800736EC8 /* NetworkingEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2194D6962AE07BA800736EC8 /* NetworkingEndpointTests.swift */; };
 		21975E4B2AB6545E00B33026 /* CustomerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21975E4A2AB6545E00B33026 /* CustomerViewModel.swift */; };
 		21975E4D2AB661B200B33026 /* DetailViewMdoel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21975E4C2AB661B200B33026 /* DetailViewMdoel.swift */; };
 		219ED2362AABD40200DFF23D /* UsersStaticData.json in Resources */ = {isa = PBXBuildFile; fileRef = 219ED2352AABD40200DFF23D /* UsersStaticData.json */; };
@@ -55,6 +56,7 @@
 		2156ECCA2ACC517300A65DE6 /* CheckmarkPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkPopoverView.swift; sourceTree = "<group>"; };
 		2156ECCD2ACC58F300A65DE6 /* CreateValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateValidator.swift; sourceTree = "<group>"; };
 		218C83882AAE72270050693A /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		2194D6962AE07BA800736EC8 /* NetworkingEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingEndpointTests.swift; sourceTree = "<group>"; };
 		21975E4A2AB6545E00B33026 /* CustomerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewModel.swift; sourceTree = "<group>"; };
 		21975E4C2AB661B200B33026 /* DetailViewMdoel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewMdoel.swift; sourceTree = "<group>"; };
 		219ED2352AABD40200DFF23D /* UsersStaticData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UsersStaticData.json; sourceTree = "<group>"; };
@@ -118,6 +120,22 @@
 				2156ECCD2ACC58F300A65DE6 /* CreateValidator.swift */,
 			);
 			path = Validator;
+			sourceTree = "<group>";
+		};
+		2194D6942AE07B4D00736EC8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2194D6952AE07B5B00736EC8 /* Endpoint */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		2194D6952AE07B5B00736EC8 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				2194D6962AE07BA800736EC8 /* NetworkingEndpointTests.swift */,
+			);
+			path = Endpoint;
 			sourceTree = "<group>";
 		};
 		219ED2342AABD3C200DFF23D /* JSON */ = {
@@ -343,6 +361,7 @@
 		21B1A6712AD4A9D1000C2DA1 /* CustomerTests */ = {
 			isa = PBXGroup;
 			children = (
+				2194D6942AE07B4D00736EC8 /* Networking */,
 				21C07F862ADA311E000980A3 /* Form */,
 				21B1A6792AD4A9F1000C2DA1 /* Mapper */,
 			);
@@ -525,6 +544,7 @@
 			files = (
 				21C07F882ADA3181000980A3 /* CreateFormValidationTests.swift in Sources */,
 				21B1A67B2AD4AA43000C2DA1 /* JSONMapperTests.swift in Sources */,
+				2194D6972AE07BA800736EC8 /* NetworkingEndpointTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
