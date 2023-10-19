@@ -42,13 +42,19 @@ enum Endpoint {
         urlComponents.host = host
         urlComponents.path = path
         
-        var requestQueryItems = queryItem?.compactMap { item in
-            
-            URLQueryItem(name: item.key , value: item.value)
+        var requestQueryItems = [URLQueryItem]()
+        
+        queryItem?.forEach{item in
+            requestQueryItems.append(URLQueryItem(name: item.key, value: item.value))
         }
         
+//        var requestQueryItems = queryItem?.compactMap { item in
+//            
+//            URLQueryItem(name: item.key , value: item.value)
+//        }
+        
         #if DEBUG
-        requestQueryItems?.append(URLQueryItem(name: "delay", value: "1"))
+        requestQueryItems.append(URLQueryItem(name: "delay", value: "1"))
         #endif
         
         urlComponents.queryItems = requestQueryItems
