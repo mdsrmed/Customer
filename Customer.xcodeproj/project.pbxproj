@@ -20,6 +20,8 @@
 		219ED23C2AABD66B00DFF23D /* UsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219ED23B2AABD66B00DFF23D /* UsersResponse.swift */; };
 		219ED23F2AABD73600DFF23D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219ED23E2AABD73600DFF23D /* Models.swift */; };
 		219ED2422AABD7AA00DFF23D /* StaticJSONMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219ED2412AABD7AA00DFF23D /* StaticJSONMapper.swift */; };
+		219FC50D2AE1F98C0093D9B3 /* MockURLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219FC50C2AE1F98C0093D9B3 /* MockURLSessionProtocol.swift */; };
+		219FC5102AE1FD4D0093D9B3 /* NetworkingManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219FC50F2AE1FD4D0093D9B3 /* NetworkingManagerTests.swift */; };
 		21AC19692AA3D4E2001BA3F4 /* CustomerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC19682AA3D4E2001BA3F4 /* CustomerApp.swift */; };
 		21AC196B2AA3D4E2001BA3F4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC196A2AA3D4E2001BA3F4 /* ContentView.swift */; };
 		21AC196D2AA3D4E4001BA3F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21AC196C2AA3D4E4001BA3F4 /* Assets.xcassets */; };
@@ -65,6 +67,8 @@
 		219ED23B2AABD66B00DFF23D /* UsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersResponse.swift; sourceTree = "<group>"; };
 		219ED23E2AABD73600DFF23D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		219ED2412AABD7AA00DFF23D /* StaticJSONMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticJSONMapper.swift; sourceTree = "<group>"; };
+		219FC50C2AE1F98C0093D9B3 /* MockURLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionProtocol.swift; sourceTree = "<group>"; };
+		219FC50F2AE1FD4D0093D9B3 /* NetworkingManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerTests.swift; sourceTree = "<group>"; };
 		21AC19652AA3D4E2001BA3F4 /* Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Customer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21AC19682AA3D4E2001BA3F4 /* CustomerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerApp.swift; sourceTree = "<group>"; };
 		21AC196A2AA3D4E2001BA3F4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 		2194D6942AE07B4D00736EC8 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				219FC50E2AE1FD100093D9B3 /* NetworkingManager */,
+				219FC50B2AE1F95F0093D9B3 /* Mocks */,
 				2194D6952AE07B5B00736EC8 /* Endpoint */,
 			);
 			path = Networking;
@@ -161,6 +167,22 @@
 				219ED2412AABD7AA00DFF23D /* StaticJSONMapper.swift */,
 			);
 			path = Mapper;
+			sourceTree = "<group>";
+		};
+		219FC50B2AE1F95F0093D9B3 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				219FC50C2AE1F98C0093D9B3 /* MockURLSessionProtocol.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		219FC50E2AE1FD100093D9B3 /* NetworkingManager */ = {
+			isa = PBXGroup;
+			children = (
+				219FC50F2AE1FD4D0093D9B3 /* NetworkingManagerTests.swift */,
+			);
+			path = NetworkingManager;
 			sourceTree = "<group>";
 		};
 		21AC195C2AA3D4E2001BA3F4 = {
@@ -542,8 +564,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				219FC5102AE1FD4D0093D9B3 /* NetworkingManagerTests.swift in Sources */,
 				21C07F882ADA3181000980A3 /* CreateFormValidationTests.swift in Sources */,
 				21B1A67B2AD4AA43000C2DA1 /* JSONMapperTests.swift in Sources */,
+				219FC50D2AE1F98C0093D9B3 /* MockURLSessionProtocol.swift in Sources */,
 				2194D6972AE07BA800736EC8 /* NetworkingEndpointTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
