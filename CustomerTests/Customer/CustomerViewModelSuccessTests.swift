@@ -6,30 +6,34 @@
 //
 
 import XCTest
+@testable import Customer
 
+@MainActor
 final class CustomerViewModelSuccessTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    private var networkingMock: NetworkingManagerImpl!
+    private var vm: CustomerViewModel!
+    
+   override  func setUp() {
+        networkingMock = NetworkingManagerUserResponseSuccessMock()
+        vm = CustomerViewModel(networkingManager: networkingMock)
+    }
+    
+    
+    override  func tearDown() {
+        networkingMock = nil
+        vm = nil
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_with_successful_response_users_array_is_set() async throws {
+        
+        XCTAssertFalse(vm.isLoading,"The view model shouldn't be loading any data")
+        defer {
+            XCTAssertFalse(vm.isLoading,"The view model shouldn't be loading any data")
+            XCTAssertEqual(vm.viewState, .finished, "The view model view state should be finished")
         }
+        await vm.fetchUsers()
+        XCTAssertEqual(vm.users.count, 6, "There should be 6 users with in our data array")
     }
 
 }

@@ -28,6 +28,8 @@
 		21AC19702AA3D4E4001BA3F4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21AC196F2AA3D4E4001BA3F4 /* Preview Assets.xcassets */; };
 		21AC19782AA3D582001BA3F4 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC19772AA3D582001BA3F4 /* Symbols.swift */; };
 		21AC197B2AA3D83A001BA3F4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC197A2AA3D83A001BA3F4 /* Theme.swift */; };
+		21AFC85D2AE47982006B1CBA /* CustomerViewModelSuccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AFC85C2AE47982006B1CBA /* CustomerViewModelSuccessTests.swift */; };
+		21AFC85F2AE47A8B006B1CBA /* NetworkingManagerUserResponseSuccessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AFC85E2AE47A8B006B1CBA /* NetworkingManagerUserResponseSuccessMock.swift */; };
 		21B1A67B2AD4AA43000C2DA1 /* JSONMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1A67A2AD4AA43000C2DA1 /* JSONMapperTests.swift */; };
 		21B512AB2AB25F1700145CDC /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B512AA2AB25F1700145CDC /* CreateView.swift */; };
 		21C07F882ADA3181000980A3 /* CreateFormValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C07F872ADA3181000980A3 /* CreateFormValidationTests.swift */; };
@@ -76,6 +78,8 @@
 		21AC196F2AA3D4E4001BA3F4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		21AC19772AA3D582001BA3F4 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		21AC197A2AA3D83A001BA3F4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		21AFC85C2AE47982006B1CBA /* CustomerViewModelSuccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewModelSuccessTests.swift; sourceTree = "<group>"; };
+		21AFC85E2AE47A8B006B1CBA /* NetworkingManagerUserResponseSuccessMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerUserResponseSuccessMock.swift; sourceTree = "<group>"; };
 		21B1A6702AD4A9D0000C2DA1 /* CustomerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B1A67A2AD4AA43000C2DA1 /* JSONMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMapperTests.swift; sourceTree = "<group>"; };
 		21B512AA2AB25F1700145CDC /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				219FC50C2AE1F98C0093D9B3 /* MockURLSessionProtocol.swift */,
+				21AFC85E2AE47A8B006B1CBA /* NetworkingManagerUserResponseSuccessMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -380,9 +385,18 @@
 			path = ViewMdoel;
 			sourceTree = "<group>";
 		};
+		21AFC85B2AE47934006B1CBA /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				21AFC85C2AE47982006B1CBA /* CustomerViewModelSuccessTests.swift */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
 		21B1A6712AD4A9D1000C2DA1 /* CustomerTests */ = {
 			isa = PBXGroup;
 			children = (
+				21AFC85B2AE47934006B1CBA /* Customer */,
 				2194D6942AE07B4D00736EC8 /* Networking */,
 				21C07F862ADA311E000980A3 /* Form */,
 				21B1A6792AD4A9F1000C2DA1 /* Mapper */,
@@ -564,6 +578,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21AFC85D2AE47982006B1CBA /* CustomerViewModelSuccessTests.swift in Sources */,
+				21AFC85F2AE47A8B006B1CBA /* NetworkingManagerUserResponseSuccessMock.swift in Sources */,
 				219FC5102AE1FD4D0093D9B3 /* NetworkingManagerTests.swift in Sources */,
 				21C07F882ADA3181000980A3 /* CreateFormValidationTests.swift in Sources */,
 				21B1A67B2AD4AA43000C2DA1 /* JSONMapperTests.swift in Sources */,
