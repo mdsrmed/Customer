@@ -11,6 +11,8 @@
 		2156ECCB2ACC517300A65DE6 /* CheckmarkPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156ECCA2ACC517300A65DE6 /* CheckmarkPopoverView.swift */; };
 		2156ECCE2ACC58F300A65DE6 /* CreateValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156ECCD2ACC58F300A65DE6 /* CreateValidator.swift */; };
 		218C83892AAE72270050693A /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C83882AAE72270050693A /* DetailView.swift */; };
+		21941E572AE5CC42009A7C8F /* CustomerViewModelFailureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21941E562AE5CC42009A7C8F /* CustomerViewModelFailureTests.swift */; };
+		21941E592AE5CCBC009A7C8F /* NetworkingManagerUserResponseFailureMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21941E582AE5CCBC009A7C8F /* NetworkingManagerUserResponseFailureMock.swift */; };
 		2194D6972AE07BA800736EC8 /* NetworkingEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2194D6962AE07BA800736EC8 /* NetworkingEndpointTests.swift */; };
 		21975E4B2AB6545E00B33026 /* CustomerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21975E4A2AB6545E00B33026 /* CustomerViewModel.swift */; };
 		21975E4D2AB661B200B33026 /* DetailViewMdoel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21975E4C2AB661B200B33026 /* DetailViewMdoel.swift */; };
@@ -60,6 +62,8 @@
 		2156ECCA2ACC517300A65DE6 /* CheckmarkPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkPopoverView.swift; sourceTree = "<group>"; };
 		2156ECCD2ACC58F300A65DE6 /* CreateValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateValidator.swift; sourceTree = "<group>"; };
 		218C83882AAE72270050693A /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		21941E562AE5CC42009A7C8F /* CustomerViewModelFailureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewModelFailureTests.swift; sourceTree = "<group>"; };
+		21941E582AE5CCBC009A7C8F /* NetworkingManagerUserResponseFailureMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerUserResponseFailureMock.swift; sourceTree = "<group>"; };
 		2194D6962AE07BA800736EC8 /* NetworkingEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingEndpointTests.swift; sourceTree = "<group>"; };
 		21975E4A2AB6545E00B33026 /* CustomerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewModel.swift; sourceTree = "<group>"; };
 		21975E4C2AB661B200B33026 /* DetailViewMdoel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewMdoel.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 			children = (
 				219FC50C2AE1F98C0093D9B3 /* MockURLSessionProtocol.swift */,
 				21AFC85E2AE47A8B006B1CBA /* NetworkingManagerUserResponseSuccessMock.swift */,
+				21941E582AE5CCBC009A7C8F /* NetworkingManagerUserResponseFailureMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -389,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				21AFC85C2AE47982006B1CBA /* CustomerViewModelSuccessTests.swift */,
+				21941E562AE5CC42009A7C8F /* CustomerViewModelFailureTests.swift */,
 			);
 			path = Customer;
 			sourceTree = "<group>";
@@ -582,9 +588,11 @@
 				21AFC85F2AE47A8B006B1CBA /* NetworkingManagerUserResponseSuccessMock.swift in Sources */,
 				219FC5102AE1FD4D0093D9B3 /* NetworkingManagerTests.swift in Sources */,
 				21C07F882ADA3181000980A3 /* CreateFormValidationTests.swift in Sources */,
+				21941E592AE5CCBC009A7C8F /* NetworkingManagerUserResponseFailureMock.swift in Sources */,
 				21B1A67B2AD4AA43000C2DA1 /* JSONMapperTests.swift in Sources */,
 				219FC50D2AE1F98C0093D9B3 /* MockURLSessionProtocol.swift in Sources */,
 				2194D6972AE07BA800736EC8 /* NetworkingEndpointTests.swift in Sources */,
+				21941E572AE5CC42009A7C8F /* CustomerViewModelFailureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
