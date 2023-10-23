@@ -39,6 +39,10 @@
 		21C5BDB12ACDA0B8002D3193 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C5BDB02ACDA0B8002D3193 /* SettingsView.swift */; };
 		21C5BDB42ACDA267002D3193 /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C5BDB32ACDA267002D3193 /* UserDefaultKeys.swift */; };
 		21C5BDB62ACDA861002D3193 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C5BDB52ACDA861002D3193 /* Endpoint.swift */; };
+		21C6E7DD2AE69C300057EEDE /* NetworkingManagerUserDetailResponseSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C6E7DC2AE69C300057EEDE /* NetworkingManagerUserDetailResponseSuccess.swift */; };
+		21C6E7DF2AE69D210057EEDE /* NetworkingManagerUserDetailResponseSuccessFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C6E7DE2AE69D210057EEDE /* NetworkingManagerUserDetailResponseSuccessFailure.swift */; };
+		21C6E7E22AE69E0D0057EEDE /* DetailsViewModelSuccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C6E7E12AE69E0D0057EEDE /* DetailsViewModelSuccessTests.swift */; };
+		21C6E7E42AE6A1B80057EEDE /* DetailsViewModelFailureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C6E7E32AE6A1B80057EEDE /* DetailsViewModelFailureTests.swift */; };
 		21E0F27D2AAD1D3200BE9A13 /* CustomerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0F27C2AAD1D3200BE9A13 /* CustomerListView.swift */; };
 		21E0F27F2AAD238100BE9A13 /* CustomerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0F27E2AAD238100BE9A13 /* CustomerView.swift */; };
 		21E0F2822AAD2E3700BE9A13 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0F2812AAD2E3700BE9A13 /* TagView.swift */; };
@@ -92,6 +96,10 @@
 		21C5BDB02ACDA0B8002D3193 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		21C5BDB32ACDA267002D3193 /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
 		21C5BDB52ACDA861002D3193 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		21C6E7DC2AE69C300057EEDE /* NetworkingManagerUserDetailResponseSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerUserDetailResponseSuccess.swift; sourceTree = "<group>"; };
+		21C6E7DE2AE69D210057EEDE /* NetworkingManagerUserDetailResponseSuccessFailure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerUserDetailResponseSuccessFailure.swift; sourceTree = "<group>"; };
+		21C6E7E12AE69E0D0057EEDE /* DetailsViewModelSuccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelSuccessTests.swift; sourceTree = "<group>"; };
+		21C6E7E32AE6A1B80057EEDE /* DetailsViewModelFailureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelFailureTests.swift; sourceTree = "<group>"; };
 		21E0F27C2AAD1D3200BE9A13 /* CustomerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListView.swift; sourceTree = "<group>"; };
 		21E0F27E2AAD238100BE9A13 /* CustomerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerView.swift; sourceTree = "<group>"; };
 		21E0F2812AAD2E3700BE9A13 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
@@ -180,9 +188,9 @@
 		219FC50B2AE1F95F0093D9B3 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				21C6E7DB2AE69BF20057EEDE /* UserDetails */,
+				21C6E7DA2AE69BD10057EEDE /* UserResponse */,
 				219FC50C2AE1F98C0093D9B3 /* MockURLSessionProtocol.swift */,
-				21AFC85E2AE47A8B006B1CBA /* NetworkingManagerUserResponseSuccessMock.swift */,
-				21941E582AE5CCBC009A7C8F /* NetworkingManagerUserResponseFailureMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -402,6 +410,7 @@
 		21B1A6712AD4A9D1000C2DA1 /* CustomerTests */ = {
 			isa = PBXGroup;
 			children = (
+				21C6E7E02AE69DDC0057EEDE /* Details */,
 				21AFC85B2AE47934006B1CBA /* Customer */,
 				2194D6942AE07B4D00736EC8 /* Networking */,
 				21C07F862ADA311E000980A3 /* Form */,
@@ -440,6 +449,33 @@
 				21C5BDB32ACDA267002D3193 /* UserDefaultKeys.swift */,
 			);
 			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		21C6E7DA2AE69BD10057EEDE /* UserResponse */ = {
+			isa = PBXGroup;
+			children = (
+				21941E582AE5CCBC009A7C8F /* NetworkingManagerUserResponseFailureMock.swift */,
+				21AFC85E2AE47A8B006B1CBA /* NetworkingManagerUserResponseSuccessMock.swift */,
+			);
+			path = UserResponse;
+			sourceTree = "<group>";
+		};
+		21C6E7DB2AE69BF20057EEDE /* UserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				21C6E7DC2AE69C300057EEDE /* NetworkingManagerUserDetailResponseSuccess.swift */,
+				21C6E7DE2AE69D210057EEDE /* NetworkingManagerUserDetailResponseSuccessFailure.swift */,
+			);
+			path = UserDetails;
+			sourceTree = "<group>";
+		};
+		21C6E7E02AE69DDC0057EEDE /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				21C6E7E12AE69E0D0057EEDE /* DetailsViewModelSuccessTests.swift */,
+				21C6E7E32AE6A1B80057EEDE /* DetailsViewModelFailureTests.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		21E0F2802AAD2E2500BE9A13 /* Views */ = {
@@ -584,11 +620,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21C6E7DF2AE69D210057EEDE /* NetworkingManagerUserDetailResponseSuccessFailure.swift in Sources */,
 				21AFC85D2AE47982006B1CBA /* CustomerViewModelSuccessTests.swift in Sources */,
+				21C6E7E42AE6A1B80057EEDE /* DetailsViewModelFailureTests.swift in Sources */,
 				21AFC85F2AE47A8B006B1CBA /* NetworkingManagerUserResponseSuccessMock.swift in Sources */,
+				21C6E7DD2AE69C300057EEDE /* NetworkingManagerUserDetailResponseSuccess.swift in Sources */,
 				219FC5102AE1FD4D0093D9B3 /* NetworkingManagerTests.swift in Sources */,
 				21C07F882ADA3181000980A3 /* CreateFormValidationTests.swift in Sources */,
 				21941E592AE5CCBC009A7C8F /* NetworkingManagerUserResponseFailureMock.swift in Sources */,
+				21C6E7E22AE69E0D0057EEDE /* DetailsViewModelSuccessTests.swift in Sources */,
 				21B1A67B2AD4AA43000C2DA1 /* JSONMapperTests.swift in Sources */,
 				219FC50D2AE1F98C0093D9B3 /* MockURLSessionProtocol.swift in Sources */,
 				2194D6972AE07BA800736EC8 /* NetworkingEndpointTests.swift in Sources */,

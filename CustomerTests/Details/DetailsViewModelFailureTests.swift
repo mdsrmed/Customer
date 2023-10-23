@@ -6,30 +6,35 @@
 //
 
 import XCTest
+@testable import Customer
 
+@MainActor
 final class DetailsViewModelFailureTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    private var networkingMock: NetworkingManagerImpl!
+    private var vm: DetailViewModel!
+    
+    override func setUp() {
+        networkingMock = NetworkingManagerUserResponseFailureMock()
+        vm = DetailViewModel(networkingManager: networkingMock)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override  func tearDown() {
+        networkingMock = nil
+        vm = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func test_with_unsuccessful_response_error_is_handled() async {
+        
+        XCTAssertFalse(vm.isLoading, "The view model should not be loading")
+        
+        defer {
+            XCTAssertFalse(vm.isLoading, "The view model should not be loading")
         }
+        
+        await vm.fetchDetails(for: 1)
+        
+        XCTAssertTrue(vm.hasError, "The view model error should be true")
+        XCTAssertNotNil(vm.error, "The view model error should not be nil")
     }
-
 }
