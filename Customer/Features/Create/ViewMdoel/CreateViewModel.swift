@@ -15,7 +15,14 @@ final class CreateViewModel: ObservableObject {
     @Published var hasError = false
     
     
-    private let validator = CreateValidator()
+    private let networikingManager: NetworkingManagerImpl!
+    private let validator: CreateValidatorImpl!
+    
+    init(networkingManager: NetworkingManagerImpl = NetworkingManager.shared,
+         validator: CreateValidatorImpl = CreateValidator()){
+        self.networikingManager = networkingManager
+        self.validator = validator
+    }
     
     func create() async {
         do {
@@ -26,7 +33,7 @@ final class CreateViewModel: ObservableObject {
             let encoder = JSONEncoder()
             encoder.keyEncodingStrategy = .convertToSnakeCase
             let data = try encoder.encode(customer)
-            try await NetworkingManager.shared.request(.create(submissionData: data))
+            try await networikingManager.request(session: .shared, .create(submissionData: data))
             state = .successful
             
         } catch {

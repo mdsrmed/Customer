@@ -30,6 +30,9 @@
 		21AC19702AA3D4E4001BA3F4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21AC196F2AA3D4E4001BA3F4 /* Preview Assets.xcassets */; };
 		21AC19782AA3D582001BA3F4 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC19772AA3D582001BA3F4 /* Symbols.swift */; };
 		21AC197B2AA3D83A001BA3F4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC197A2AA3D83A001BA3F4 /* Theme.swift */; };
+		21ACBA812AEA8A4B00C16D83 /* NetworkingManagerCreateSuccessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ACBA802AEA8A4B00C16D83 /* NetworkingManagerCreateSuccessMock.swift */; };
+		21ACBA852AEA8B8800C16D83 /* CreateValidatorSuccessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ACBA842AEA8B8800C16D83 /* CreateValidatorSuccessMock.swift */; };
+		21ACBA872AEA8C4900C16D83 /* CreateViewModelSuccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ACBA862AEA8C4900C16D83 /* CreateViewModelSuccessTests.swift */; };
 		21AFC85D2AE47982006B1CBA /* CustomerViewModelSuccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AFC85C2AE47982006B1CBA /* CustomerViewModelSuccessTests.swift */; };
 		21AFC85F2AE47A8B006B1CBA /* NetworkingManagerUserResponseSuccessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AFC85E2AE47A8B006B1CBA /* NetworkingManagerUserResponseSuccessMock.swift */; };
 		21B1A67B2AD4AA43000C2DA1 /* JSONMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1A67A2AD4AA43000C2DA1 /* JSONMapperTests.swift */; };
@@ -86,6 +89,9 @@
 		21AC196F2AA3D4E4001BA3F4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		21AC19772AA3D582001BA3F4 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		21AC197A2AA3D83A001BA3F4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		21ACBA802AEA8A4B00C16D83 /* NetworkingManagerCreateSuccessMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerCreateSuccessMock.swift; sourceTree = "<group>"; };
+		21ACBA842AEA8B8800C16D83 /* CreateValidatorSuccessMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateValidatorSuccessMock.swift; sourceTree = "<group>"; };
+		21ACBA862AEA8C4900C16D83 /* CreateViewModelSuccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModelSuccessTests.swift; sourceTree = "<group>"; };
 		21AFC85C2AE47982006B1CBA /* CustomerViewModelSuccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewModelSuccessTests.swift; sourceTree = "<group>"; };
 		21AFC85E2AE47A8B006B1CBA /* NetworkingManagerUserResponseSuccessMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerUserResponseSuccessMock.swift; sourceTree = "<group>"; };
 		21B1A6702AD4A9D0000C2DA1 /* CustomerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +194,7 @@
 		219FC50B2AE1F95F0093D9B3 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				21ACBA7F2AEA8A2100C16D83 /* Create */,
 				21C6E7DB2AE69BF20057EEDE /* UserDetails */,
 				21C6E7DA2AE69BD10057EEDE /* UserResponse */,
 				219FC50C2AE1F98C0093D9B3 /* MockURLSessionProtocol.swift */,
@@ -398,6 +405,31 @@
 			path = ViewMdoel;
 			sourceTree = "<group>";
 		};
+		21ACBA7F2AEA8A2100C16D83 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				21ACBA802AEA8A4B00C16D83 /* NetworkingManagerCreateSuccessMock.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		21ACBA822AEA8B6600C16D83 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				21ACBA832AEA8B7000C16D83 /* Mocks */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		21ACBA832AEA8B7000C16D83 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				21ACBA842AEA8B8800C16D83 /* CreateValidatorSuccessMock.swift */,
+				21ACBA862AEA8C4900C16D83 /* CreateViewModelSuccessTests.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		21AFC85B2AE47934006B1CBA /* Customer */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +442,7 @@
 		21B1A6712AD4A9D1000C2DA1 /* CustomerTests */ = {
 			isa = PBXGroup;
 			children = (
+				21ACBA822AEA8B6600C16D83 /* Create */,
 				21C6E7E02AE69DDC0057EEDE /* Details */,
 				21AFC85B2AE47934006B1CBA /* Customer */,
 				2194D6942AE07B4D00736EC8 /* Networking */,
@@ -623,9 +656,12 @@
 				21C6E7DF2AE69D210057EEDE /* NetworkingManagerUserDetailResponseSuccessFailure.swift in Sources */,
 				21AFC85D2AE47982006B1CBA /* CustomerViewModelSuccessTests.swift in Sources */,
 				21C6E7E42AE6A1B80057EEDE /* DetailsViewModelFailureTests.swift in Sources */,
+				21ACBA812AEA8A4B00C16D83 /* NetworkingManagerCreateSuccessMock.swift in Sources */,
 				21AFC85F2AE47A8B006B1CBA /* NetworkingManagerUserResponseSuccessMock.swift in Sources */,
 				21C6E7DD2AE69C300057EEDE /* NetworkingManagerUserDetailResponseSuccess.swift in Sources */,
 				219FC5102AE1FD4D0093D9B3 /* NetworkingManagerTests.swift in Sources */,
+				21ACBA852AEA8B8800C16D83 /* CreateValidatorSuccessMock.swift in Sources */,
+				21ACBA872AEA8C4900C16D83 /* CreateViewModelSuccessTests.swift in Sources */,
 				21C07F882ADA3181000980A3 /* CreateFormValidationTests.swift in Sources */,
 				21941E592AE5CCBC009A7C8F /* NetworkingManagerUserResponseFailureMock.swift in Sources */,
 				21C6E7E22AE69E0D0057EEDE /* DetailsViewModelSuccessTests.swift in Sources */,

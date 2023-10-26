@@ -7,8 +7,12 @@
 
 import Foundation
 
+protocol CreateValidatorImpl {
+    func validate(_ customer: NewCustomer) throws
+}
 
-struct CreateValidator {
+
+struct CreateValidator: CreateValidatorImpl{
     
     func validate(_ customer: NewCustomer) throws {
         
