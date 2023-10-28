@@ -124,3 +124,18 @@ extension CreateViewModel {
         }
     }
 }
+
+extension CreateViewModel.FormError: Equatable {
+    static func == (lhs: CreateViewModel.FormError, rhs: CreateViewModel.FormError) -> Bool {
+        switch (lhs, rhs) {
+        case (.networking(let lhsType), .networking(let rhsType)):
+            return  lhsType.errorDescription == rhsType.errorDescription
+        case (.validation(let lhsType), .validation(let rhsType)):
+            return  lhsType.errorDescription == rhsType.errorDescription
+        case (.system(let lhsType), .system(let rhsType)):
+            return  lhsType.localizedDescription == rhsType.localizedDescription
+        default:
+            return false
+        }
+    }
+}

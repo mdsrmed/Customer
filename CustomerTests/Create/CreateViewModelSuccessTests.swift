@@ -28,4 +28,13 @@ final class CreateViewModelSuccessTests: XCTestCase {
         vm = nil
     }
     
+    
+    func test_with_successful_response_submission_state_is_successful() async throws {
+        XCTAssertNil(vm.state, "The view model state should be nil initially")
+        defer {
+            XCTAssertEqual(vm.state, .successful, "The view model state should be successful")
+        }
+        
+        await vm.create()
+    }
 }
